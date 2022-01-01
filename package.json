@@ -1,5 +1,21 @@
 {
-  "dependencies": {
-    "apollo-server-express": "^2.15.0"
-  }
+  
+    "name": "book-search-engine",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server/server.js",
+    "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+  
+    },
+  
+    "dependencies": {
+    "apollo-server": "^3.6.1",
+    "apollo-server-express": "^2.25.3",
+    "concurrently": "^6.5.1",
+    "graphql": "^15.8.0"
+    }
 }
