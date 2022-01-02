@@ -37,3 +37,9 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
+// opens db/ starts PORT 3001
+db.once('open', () => {
+  console.log(`🌍 API server running on port ${PORT}!`);
+  // console logs web server site
+  console.log(`Use GraphQL @ http://localhost:${PORT}${server.graphqlPath}`);
+});
